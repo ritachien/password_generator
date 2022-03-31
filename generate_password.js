@@ -31,7 +31,7 @@ function generatePassword(options) {
   // start generating password
   let password = ''
   for (let i = 1; i <= Number(options.length); i++) {
-    const randomIndex = Math.floor(Math.random() * options.length)
+    const randomIndex = Math.floor(Math.random() * collection.length)
     password += collection[randomIndex]
   }
 
