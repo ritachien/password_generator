@@ -28,6 +28,10 @@ function generatePassword(options) {
     character => !options.excludeCharacters.includes(character)
   )
 
+  // Return error notice if collection is empty
+  if (collection.length === 0) {
+    return 'There is no valid character in your selection!'
+  }
   // start generating password
   let password = ''
   for (let i = 1; i <= Number(options.length); i++) {
