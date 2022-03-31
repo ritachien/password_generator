@@ -4,9 +4,14 @@ const exphbs = require('express-handlebars')
 const app = express()
 const port = 3000
 
+// Set express engine
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+
+
 // Route settings
 app.get('/', (req, res) => {
-  res.send('This will be replaced by handlebars render file.')
+  res.render('index')
 })
 
 // Listening server on localhost:3000
